@@ -705,49 +705,12 @@ section#calltoaction {
 }
 
 /* news subcritpion */
-.newslatter{
-
+button.subcriber_btn {
+    display: block;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 16px;
 }
-#footerEmailForm {
-    margin-top: 7px;
-}
-#footerEmail {
-    vertical-align: middle;
-    width: 260px;
-}
-input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="search"], input[type="number"] {
-    color: #333;
-    height: 40px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    -webkit-box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
-    -moz-box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
-    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
-}
-#footerSignupError {
-    float: left;
-}
-#footerEmailSubmit {
-    height: 40px;
-    vertical-align: middle;
-    font-size: 15px;
-    line-height: 20px;
-    border-radius: 3px;
-    border: none;
-}
-.blue-grad {
-    background: #2aa4e5;
-    background: -moz-linear-gradient(top,#2aa4e5 10%,#197abf 90%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#2aa4e5),color-stop(90%,#197abf));
-    background: -webkit-linear-gradient(top,#2aa4e5 10%,#197abf 90%);
-    background: -o-linear-gradient(top,#2aa4e5 10%,#197abf 90%);
-    background: -ms-linear-gradient(top,#2aa4e5 10%,#197abf 90%);
-    background: linear-gradient(to bottom,#2aa4e5 10%,#197abf 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2aa4e5',endColorstr='#197abf',GradientType=0);
-    color: white;
-}
-
 .ltblue-bg {
     background-color: #2aa4e5;
     color: white;
