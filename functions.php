@@ -164,3 +164,4 @@ require get_template_directory() . '/inc/required_plugins.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/widgets/quick_links.php';
 require get_template_directory() . '/inc/options.php';
+require get_template_directory() . '/inc/shortcodes.php';

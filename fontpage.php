@@ -79,49 +79,7 @@ get_header(); ?>
 					<h2 class="section_title">Popular Categories</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-sm-2 col-xs-12">
-					<div class="popular_categories_item text-center">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="">
-						<a href="#"><h4 class="title_h4">Text 1</h4></a>
-					</div>
-				</div>
-			</div>
+			<?php echo do_shortcode('[product_category_items]'); ?>
 		</div>
 	</section><!-- /popular_categories -->
 
@@ -134,126 +92,9 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="row">
-				<div class="new_products_slider">
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-					
-					<!-- Product -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="product_wrapper text-center">
-							<div class="product_image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/cat_icon.png" class="img-responsive" alt="Product Image">
-								</a>
-							</div>
-							<div class="product_info">
-								<div class="product_name title_h4">
-									<a href="#">Floating Keychain</a>
-								</div>
-								<div class="product_link">
-									<a href="#">View Now!</a>
-								</div>
-							</div>
-						</div>
-					</div><!-- Product -->
-
-				</div>
+				
+					<?php echo do_shortcode('[featured_products per_page="12" columns="1"]');?>
+				
 			</div>
 		</div>
 	</section><!-- /new_products -->
@@ -309,38 +150,7 @@ get_header(); ?>
 	</section><!-- /aboutcontent -->
 	<?php endif; ?>
 
-	<!-- newslatter -->
-	<section id="newslatter" class="blue_bg padding_top_0 padding_bottom_0">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9">
-					<div class="subcribe">
-						<div class="col-md-5">
-							<p><span class="text-uppercase">subcribe</span> to our newslatter</p>
-						</div>
-						<div class="col-md-7">
-							<div class="newslatter">
-								<div class="input-group">
-							      	<input type="text" class="form-control" placeholder="Search for...">
-							      	<span class="input-group-btn">
-							        <button class="btn btn-default subcriber_btn" type="button">Go!</button>
-							      	</span>
-							    </div><!-- /input-group -->
-						    </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 ltblue-bg" id="footerCatalogWrap">
-					<div class="footerCatalog">
-						<a href="#">
-							<div class="header-six">Request <span class="uppercase">Free</span></div>
-							<div class="header-three">Simple</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- /aboutcontent -->
+	
 
 <?php
 get_footer();
