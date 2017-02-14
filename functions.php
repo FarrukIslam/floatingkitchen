@@ -1,4 +1,21 @@
 <?php
+
+// $con = mysqli_connect('localhost', 'root', 'admin');
+//   if (!$con) {
+//       echo "Cannot connect to the database ";
+//       die();
+//   }
+//   mysqli_select_db('floatingkitchen');
+//   $result = mysqli_query('show tables');
+//   while ($tables = mysqli_fetch_array($result)) {
+//       foreach ($tables as $key => $value) {
+//           mysqli_query("ALTER TABLE $value CONVERT TO CHARACTER SET utf8 COLLATE utf8_bin");
+//       }
+//   }
+//   echo "The collation of your database has been successfully changed!";
+
+
+
 /**
  * floatingkitchen functions and definitions
  *

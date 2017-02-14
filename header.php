@@ -153,5 +153,5 @@
 	
 		</header>
 		<!-- /header -->
-		<div id="content" class="site-content">
+		<div id="content" class="site-content bottom_shadow padding_bottom_60">
 
