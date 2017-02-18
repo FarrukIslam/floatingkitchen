@@ -119,4 +119,38 @@
 	});
 
 
+	// Get titles from the DOM
+	var titleMain  = $("#animatedHeading");
+	var titleSubs  = titleMain.find("slick-active");
+
+	if (titleMain.length) {
+
+	  titleMain.slick({
+	    autoplay: true,
+	    arrows: true,
+	    dots: false,
+	    slidesToShow: 1,
+	    centerPadding: "10px",
+	    draggable: true,
+	    infinite: true,
+	    pauseOnHover: true,
+	    swipe: true,
+	    touchMove: false,
+	    vertical: true,
+	    speed: 2000,
+	    autoplaySpeed: 2000,
+	    useTransform: true,
+	  cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
+	    adaptiveHeight: true,
+	  });
+
+	  // On init
+	  $(".slick-dupe").each(function(index, el) {
+	    $("#animatedHeading").slick('slickAdd', "<div>" + el.innerHTML + "</div>");
+	  });
+
+	  // Manually refresh positioning of slick
+	  titleMain.slick('slickPlay');
+	};
+
 }(jQuery));	

@@ -17,4 +17,9 @@
  */
 ?>
 <div class="row">
-	<div class="new_products_slider">
+<?php 
+if ( is_front_page() ) {	
+	echo'<div class="new_products_slider">';
+    }
+?>
+	

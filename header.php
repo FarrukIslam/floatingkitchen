@@ -57,8 +57,8 @@
 							</div>
 						</div>
 						<div class="col-md-5 col-sm-5 hidden-xs">
-							<div class="search_bar">
-								<div class="input-group">
+							<div class="search_bar_header">
+				<!-- 				<div class="input-group">
 								    <div class="input-group-btn">
 								        <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span>
 								        </button>
@@ -72,12 +72,23 @@
 								            <li role="separator" class="divider"></li>
 								            <li><a href="#">Separated link</a>
 								            </li>
-								        </ul>
+								        </ul>        
 								    </div>
-								    <!-- /btn-group -->
+								 
 								    <input type="text" class="form-control" aria-label="...">
-								</div>
-								<!-- /input-group -->
+
+								</div> -->
+								<!-- /input-group -->    
+								    <?php 
+						    if( class_exists('WP_Advanced_Search') ) {
+						        $search = new WP_Advanced_Search('escaperoom_search');
+						        $search->the_form();
+						    } else {
+						        echo '<h3> WP Advanced Search PLugin is inactive </h3>';
+						    }
+						?>   
+
+							
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-12 padding_0">
@@ -91,10 +102,15 @@
 									
 								<li>
 									<div class="shopping_cart blue_grad text-right">
-										<a href="#" class="cart_toggler">
-											<span class="icon-cart"></span>Cart 
-											<span class="cart_quantity">0</span>
-										</a>
+										<div class="cart_toggler">
+											<a class="ajaxify_cart" href="<?php echo wc_get_cart_url(); ?>" class="cart_toggler" title="<?php _e( 'View your shopping cart' ); ?>" >
+												<div class="mini_cart">
+												<span class="icon-cart"></span>Cart 
+												<span class="cart_quantity"><?php echo sprintf ( _n( '%d item', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+												</div>
+											</a>
+											<div class="header_shopping_cart_content"></div>
+										</div>
 									</div>
 								</li>
 							</ul>
@@ -107,6 +123,14 @@
 								<input type="search" name="search" id="search" placeholder="Search Products" class="form-control">
 							</div>
 						</div>
+						<?php 
+						    if( class_exists('WP_Advanced_Search') ) {
+						        $search = new WP_Advanced_Search('floatingkitchen_search');
+						        $search->the_form();
+						    } else {
+						        echo '<h3> WP Advanced Search PLugin is inactive </h3>';
+						    }
+						?>                   
 					</div>
 				</div>
 			</div>
@@ -124,16 +148,57 @@
 					</div>
 			
 					<div class="collapse navbar-collapse" id="primary_nav">
-						<ul class="all_categories blue_grad list-inline pull-left">
-							<li class="dropdown">
-								<a class="dropdown-toggle icon-Menu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop <strong>All Products</strong></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Kitchen</a></li>
-									<li><a href="#">Cat One</a></li>
-									<li><a href="#">Ummi</a></li>
-								</ul>
-							</li> 
-						</ul>
+			
+
+
+
+			<ul class="all_categories blue_grad list-inline pull-left categories_lists">
+				<li class="dropdown">
+		            <a class="dropdown-toggle icon-Menu btn btn-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" >Shop <strong>All Products</strong></a>
+
+		    		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+					<?php 
+						$cats = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0));
+						foreach($cats as $cat) :
+						$sub_cats = get_terms(array('parent' => $cat->term_id, 'taxonomy' => 'product_cat'));
+						$class = count($sub_cats) > 0 ? 'angle-right' : ''; 
+					?>
+						<li class="dropdown-submenu <?php echo $class; ?>">
+							<a href="<?php echo get_term_link( $cat->slug, $cat->taxonomy ); ?>"><?php echo $cat->name; ?></a>
+							<?php if ($sub_cats) : ?>
+							<!-- <ul class="dropdown-menu">
+							<?php foreach ($sub_cats as $sub_cat): ?>
+								<li>
+									<a href="<?php echo get_term_link( $sub_cat->slug, $sub_cat->taxonomy ); ?>"><?php echo $sub_cat->name; ?></a>
+									<?php 
+										$sub_sub_cats = get_terms(array('parent' => $sub_cat->term_id, 'taxonomy' => 'product_cat'));
+										if($sub_sub_cats) : ?>
+										<ul class="dropdown-menu">
+										<?php foreach ($sub_sub_cats as $sub_sub_cat) : ?>
+											<li>
+												<a href="<?php echo get_term_link( $sub_sub_cat->slug, $sub_sub_cat->taxonomy );?>"><?php echo $sub_sub_cat->name; ?></a>
+											</li>
+										<?php endforeach; ?>
+										</ul>
+									<?php endif; ?>
+								</li>
+							<?php endforeach; ?>  
+							</ul> -->
+						<?php endif; ?>
+						</li>
+					<?php endforeach; ?>
+		            </ul>
+		        </li>
+		     
+			</ul><!-- /categories -->
+
+
+
+
+
+
+
 						<?php wp_nav_menu( 
 								array(
 								'menu'               => 'primary_menu',

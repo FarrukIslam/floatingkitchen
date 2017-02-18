@@ -109,14 +109,23 @@ add_action( 'after_setup_theme', 'floatingkitchen_content_width', 0 );
  */
 function floatingkitchen_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer widgets', 'granolaecommerce' ),
+		'name'          => esc_html__( 'Footer widgets', 'floatingkitchen' ),
 		'id'            => 'footer_widgets',
-		'description'   => esc_html__( 'Add widgets here.', 'granolaecommerce' ),
+		'description'   => esc_html__( 'Add widgets here.', 'floatingkitchen' ),
 		'before_widget' => '<div class="col-md-4 col-sm-4 col-xs-12"><div id="%1$s" class="pull-left widget %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>',
-	) );						
+	) );	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Shop Sidebar', 'floatingkitchen' ),
+		'id'            => 'shop-sidebar',
+		'description'   => esc_html__( 'Add widgets For Vendor page.', 'floatingkitchen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget_title">',
+		'after_title'   => '</h2>',
+	) );					
 
 }
 add_action( 'widgets_init', 'floatingkitchen_widgets_init' );
@@ -128,6 +137,7 @@ function floatingkitchen_scripts() {
 
 	// wp_enqueue_styles
 	wp_enqueue_style('ionicons', 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), false, 'all');
+	wp_enqueue_style('font_awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 	wp_enqueue_style('bootstrap_min', get_template_directory_uri() . '/css/bootstrap.min.css', array(), false, 'all');
 	wp_enqueue_style('slick_theme', get_template_directory_uri() . '/css/slick-theme.css', array(), false, 'all');
 	wp_enqueue_style('slick', get_template_directory_uri() . '/css/slick.css', array(), false, 'all');
@@ -182,3 +192,45 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/widgets/quick_links.php';
 require get_template_directory() . '/inc/options.php';
 require get_template_directory() . '/inc/shortcodes.php';
+require_once('wp-advanced-search/wpas.php');
+require get_template_directory() . '/inc/search.php';
+
+
+/* woocommerce function */
+
+
+/**
+ * Header right mini cart number ajaxify
+ *
+ */
+function granola_header_ajaxify_add_to_cart( $fragments ) {
+	global $woocommerce;
+	
+	ob_start();
+	
+	?>
+	<a class="ajaxify_cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'granolaecommerce'); ?>">
+		<div class="mini_cart">
+			<span class="icon-cart"></span>
+			<span class="cart_quantity"><?php echo sprintf(_n('%d item', '%d', $woocommerce->cart->cart_contents_count, 'granolaecommerce'), $woocommerce->cart->cart_contents_count);?></span>
+		</div>
+	</a>
+	<?php
+	
+	$fragments['.ajaxify_cart'] = ob_get_clean();
+	
+	return $fragments;
+	
+}
+add_filter('add_to_cart_fragments', 'granola_header_ajaxify_add_to_cart');
+
+/**
+ * Header right mini cart hover load cart item ajaxify
+ * Js Part settings.js File
+ */
+function mode_theme_update_mini_cart() {
+  echo wc_get_template( 'cart/mini-cart.php' );
+  die();
+}
+add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
+add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );

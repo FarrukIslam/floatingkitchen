@@ -75,7 +75,7 @@
 						<div class="col-md-7">
 							<div class="newslatter">
 								<div class="input-group">
-							      	<input type="text" class="form-control" placeholder="Search for...">
+							      	<input type="text" class="form-control" placeholder="Email Address...">
 							      	<span class="input-group-btn">
 							        <button class="btn btn-default subcriber_btn" type="button">Go!</button>
 							      	</span>

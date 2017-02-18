@@ -16,6 +16,10 @@
  * @version     2.0.0
  */
 ?>
-	</div>
+	<?php 
+	if ( is_front_page() ) {	
+		echo'</div>';
+	}
+	?>
 </div>
 					
