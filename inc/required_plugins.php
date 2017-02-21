@@ -26,6 +26,12 @@ function floatingkitchen_register_required_plugins() {
 			'source'       	=> get_stylesheet_directory() . '/inc/plugins/mailchimp-pro.zip',
 			'required'     	=> true,
 		),
+		array(
+			'name'         	=> 'Wishlist Pro', 
+			'slug'         	=> 'wishlist-pro', 
+			'source'       	=> get_stylesheet_directory() . '/inc/plugins/gema75_wc_wishlist.zip',
+			'required'     	=> true,
+		),
 
 		array(
 			'name'      	=> 'WooCommerce',
