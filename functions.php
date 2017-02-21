@@ -196,6 +196,8 @@ require_once('wp-advanced-search/wpas.php');
 require get_template_directory() . '/inc/search.php';
 
 
+
+
 /* woocommerce function */
 
 

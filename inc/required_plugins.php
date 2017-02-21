@@ -48,6 +48,11 @@ function floatingkitchen_register_required_plugins() {
 			'slug'      	=> 'contact-form-7',
 			'required'  	=> true,
 		),
+		array(
+			'name'      	=> 'Color and Image Swatches for Variable Product Attributes',
+			'slug'      	=> 'color-and-image-swatches-for-variable-product-attributes',
+			'required'  	=> true,
+		),
 	);
 
 	/*
