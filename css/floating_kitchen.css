@@ -1368,7 +1368,7 @@ table.variation_quantity_table:before {
     border-bottom-left-radius: 5px;
 }
 .variation_quantity_table thead tr th {
-    background-image: url(http://localhost/floatingkitchen/wp-content/uploads/2017/02/ep-bg-ptn.png);
+    background-image: url(http://mycustomfloatingkeychains.com/wp-content/uploads/2017/02/ep-bg-ptn-1.png);
 }
 table.variation_quantity_table tbody tr:nth-child(odd) {
     background: transparent;
@@ -1387,4 +1387,35 @@ table.variation_quantity_table tbody tr:nth-child(even) {
 }
 .product_meta .sku_wrapper {
     display: block;
+}
+/* fnncy plugin css*/
+.fpd-product-designer-wrapper {
+    max-width: 49%;
+    float: left;
+}
+.fpd-product-designer-wrapper {
+    max-width: 49%;
+    float: left;
+}
+.fpd-topbar .fpd-navigation>div {
+    padding: 0 18px;
+}
+.fpd-topbar .fpd-navigation>div>.fpd-label {
+    font-size: 13px;
+    padding-left: 3px;
+}
+@media (max-width: 1024px) {
+  .fpd-product-designer-wrapper {
+      max-width: 100%;
+      float: left;
+      margin-bottom: 20px;
+  }
+  .fpd-topbar .fpd-navigation>div>.fpd-label {
+    font-size: 10px;
+    padding-left: 0px;
+}
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+    float: none;
+    width: 100%;
+}
 }

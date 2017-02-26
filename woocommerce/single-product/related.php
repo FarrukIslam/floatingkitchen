@@ -45,7 +45,7 @@ $woocommerce_loop['name']    = 'related';
 $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_columns', $columns );
 
 if ( $products->have_posts() ) : ?>
-<div class="col-md-3">
+<div class="col-md-4">
 	<div class="related products related_product_singlepage">
 
 		<h4><?php _e( 'Related Products', 'woocommerce' ); ?></h4>

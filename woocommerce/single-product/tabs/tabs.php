@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
-	<div class="col-md-9">
+	<div class="col-md-8">
 		<div class="woocommerce-tabs wc-tabs-wrapper">
 			<ul class="tabs wc-tabs">
 				<?php foreach ( $tabs as $key => $tab ) : ?>

@@ -38,6 +38,12 @@ function floatingkitchen_register_required_plugins() {
 			'source'       	=> get_stylesheet_directory() . '/inc/plugins/Woo-Products-Quantity-Range-Pricing.zip',
 			'required'     	=> true,
 		),
+		array(
+			'name'         	=> 'Fancy product Designer', 
+			'slug'         	=> 'fancy-product-designer', 
+			'source'       	=> get_stylesheet_directory() . '/inc/plugins/fancy-product-designer.zip',
+			'required'     	=> true,
+		),
 
 		array(
 			'name'      	=> 'WooCommerce',
