@@ -96,9 +96,9 @@
 								<li class="singin_register">
 									<a href="#">Sing In</a> Or <a href="#">Register<br> your account</a>
 								</li>
-								<li class="header_wishlist">
+								<!-- <li class="header_wishlist">
 									<a href="#"><span class="ion_heart">0</span></a>
-								</li>
+								</li> -->
 									
 								<li>
 									<div class="shopping_cart blue_grad text-right">
@@ -106,7 +106,7 @@
 											<a class="ajaxify_cart" href="<?php echo wc_get_cart_url(); ?>" class="cart_toggler" title="<?php _e( 'View your shopping cart' ); ?>" >
 												<div class="mini_cart">
 												<span class="icon-cart"></span>Cart 
-												<span class="cart_quantity"><?php echo sprintf ( _n( '%d item', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+												<span class="cart_quantity"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
 												</div>
 											</a>
 											<div class="header_shopping_cart_content"></div>

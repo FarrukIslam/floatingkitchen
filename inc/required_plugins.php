@@ -32,6 +32,12 @@ function floatingkitchen_register_required_plugins() {
 			'source'       	=> get_stylesheet_directory() . '/inc/plugins/gema75_wc_wishlist.zip',
 			'required'     	=> true,
 		),
+		array(
+			'name'         	=> 'Woo Products Quantity Range Pricing', 
+			'slug'         	=> 'Woo-Products-Quantity-Range-Pricing', 
+			'source'       	=> get_stylesheet_directory() . '/inc/plugins/Woo-Products-Quantity-Range-Pricing.zip',
+			'required'     	=> true,
+		),
 
 		array(
 			'name'      	=> 'WooCommerce',

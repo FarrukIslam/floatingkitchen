@@ -211,10 +211,10 @@ function granola_header_ajaxify_add_to_cart( $fragments ) {
 	ob_start();
 	
 	?>
-	<a class="ajaxify_cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'granolaecommerce'); ?>">
+	<a class="ajaxify_cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'floatingkitchen'); ?>">
 		<div class="mini_cart">
 			<span class="icon-cart"></span>
-			<span class="cart_quantity"><?php echo sprintf(_n('%d item', '%d', $woocommerce->cart->cart_contents_count, 'granolaecommerce'), $woocommerce->cart->cart_contents_count);?></span>
+			<span class="cart_quantity"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'floatingkitchen'), $woocommerce->cart->cart_contents_count);?></span>
 		</div>
 	</a>
 	<?php
