@@ -236,3 +236,72 @@ function mode_theme_update_mini_cart() {
 }
 add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
 add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
+
+
+
+/* define default min max quantity */
+// Simple products
+add_filter( 'woocommerce_quantity_input_args', 'jk_woocommerce_quantity_input_args', 10, 2 );
+
+function jk_woocommerce_quantity_input_args( $args, $product ) {
+	if ( is_singular( 'product' ) ) {
+		$args['input_value'] 	= 250;	// Starting value (we only want to affect product pages, not cart)
+	}
+	$args['max_value'] 	= 100000; 	// Maximum value
+	$args['min_value'] 	= 250;   	// Minimum value
+	$args['step'] 		= 250;    // Quantity steps
+	return $args;
+}
+
+// Variations
+add_filter( 'woocommerce_available_variation', 'jk_woocommerce_available_variation' );
+
+function jk_woocommerce_available_variation( $args ) {
+	$args['max_qty'] = 100000; 		// Maximum value (variations)
+	$args['min_qty'] = 250;   	// Minimum value (variations)
+	return $args;
+}
+
+
+
+
+/**
+ * Add the metabox.
+ */
+
+// Display Fields
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+
+// Save Fields
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
+
+function woo_add_custom_general_fields() {
+
+  global $woocommerce, $post;
+  
+  echo '<div class="options_group">';
+  
+  // Custom fields will be created here...
+
+woocommerce_wp_text_input( 
+	array( 
+		'id'          => '_text_field', 
+		'label'       => __( 'Custom Link', 'woocommerce' ), 
+		'placeholder' => 'http://',
+		'desc_tip'    => 'true',
+		'description' => __( 'Enter the custom url', 'woocommerce' ) 
+	)
+);
+  
+  echo '</div>';
+	
+}
+
+function woo_add_custom_general_fields_save( $post_id ){
+	
+	// Text Field
+	$woocommerce_text_field = $_POST['_text_field'];
+	if( !empty( $woocommerce_text_field ) )
+		update_post_meta( $post_id, '_text_field', esc_attr( $woocommerce_text_field ) );	
+}
+

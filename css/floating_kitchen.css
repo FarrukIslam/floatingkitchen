@@ -1414,7 +1414,7 @@ table.variation_quantity_table tbody tr:nth-child(even) {
     font-size: 10px;
     padding-left: 0px;
 }
-.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+..summary.entry-summary{
     float: none;
     width: 100%;
 }
