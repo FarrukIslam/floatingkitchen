@@ -1271,7 +1271,22 @@ div#variation_pa_select-color-ink:before {
     position: relative;
     width: 100%;
 }
-
+.variations_button:before {
+    position: absolute;
+    content: "( Min 250 )";
+    height: 37px;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 35px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    left: 159px;
+    top: -56px;
+    padding-left: 40px;
+    color: #091271;
+    z-index: 9;
+}
 .variations_button .quantity:before {
     position: absolute;
     content: "3";
