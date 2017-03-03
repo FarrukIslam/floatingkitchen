@@ -57,6 +57,11 @@ function floatingkitchen_register_required_plugins() {
 			'required'  	=> true,
 		),
 		array(
+			'name'      	=> 'Easy Upload Files During Checkout',
+			'slug'      	=> 'easy-upload-files-during-checkout',
+			'required'  	=> true,
+		),
+		array(
 			'name'      	=> 'Nav Menu Roles',
 			'slug'      	=> 'nav-menu-roles',
 			'required'  	=> true,

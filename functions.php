@@ -243,7 +243,8 @@ add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart'
 // Simple products
 add_filter( 'woocommerce_quantity_input_args', 'jk_woocommerce_quantity_input_args', 10, 2 );
 
-function jk_woocommerce_quantity_input_args( $args, $product ) {
+function jk_woocommerce_quantity_input_args( $args, $product) {
+
 	if ( is_singular( 'product' ) ) {
 		$args['input_value'] 	= 250;	// Starting value (we only want to affect product pages, not cart)
 	}
@@ -257,6 +258,7 @@ function jk_woocommerce_quantity_input_args( $args, $product ) {
 add_filter( 'woocommerce_available_variation', 'jk_woocommerce_available_variation' );
 
 function jk_woocommerce_available_variation( $args ) {
+
 	$args['max_qty'] = 100000; 		// Maximum value (variations)
 	$args['min_qty'] = 250;   	// Minimum value (variations)
 	return $args;
@@ -272,9 +274,6 @@ function jk_woocommerce_available_variation( $args ) {
 // Display Fields
 add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
 
-// Save Fields
-add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
-
 function woo_add_custom_general_fields() {
 
   global $woocommerce, $post;
@@ -285,23 +284,135 @@ function woo_add_custom_general_fields() {
 
 woocommerce_wp_text_input( 
 	array( 
-		'id'          => '_text_field', 
-		'label'       => __( 'Custom Link', 'woocommerce' ), 
-		'placeholder' => 'http://',
+		'id'          => 'quantity_title', 
+		'label'       => __( 'Enter Quantity', 'floatingkitchen' ), 
+		'placeholder' => 'Enter Quantity',
 		'desc_tip'    => 'true',
-		'description' => __( 'Enter the custom url', 'woocommerce' ) 
+		'description' => __( 'Enter Quantity Title Text', 'floatingkitchen' ) 
+	),
+	array( 
+		'id'          => 'quantity_min_text', 
+		'label'       => __( 'Minimum Numbe', 'floatingkitchen' ), 
+		'placeholder' => 'Min',
+		'desc_tip'    => 'true',
+		'description' => __( 'Enter Minimum Numbe Title', 'floatingkitchen' ) 
+	),
+	array( 
+		'id'          => 'quantity_min_number', 
+		'label'       => __( 'Minimum Number', 'floatingkitchen' ), 
+		'placeholder' => '250',
+		'desc_tip'    => 'true',
+		'description' => __( 'Enter Minimum Numbe Title', 'floatingkitchen' ) 
+	)
+);
+
+woocommerce_wp_text_input( 
+	
+	array( 
+		'id'          => 'quantity_min_text', 
+		'label'       => __( 'Minimum Quantity Text', 'floatingkitchen' ), 
+		'placeholder' => 'Min',
+		'desc_tip'    => 'true',
+		'description' => __( 'Enter Minimum Numbe Title', 'floatingkitchen' ) 
 	)
 );
   
+woocommerce_wp_text_input( 
+	
+	array( 
+		'id'          => 'quantity_min_number', 
+		'label'       => __( 'Minimum Quantity Number', 'floatingkitchen' ), 
+		'placeholder' => '250',
+		'desc_tip'    => 'true',
+		'description' => __( 'Enter Minimum Numbe Title', 'floatingkitchen' ) 
+	)
+);
   echo '</div>';
 	
 }
 
+
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
 function woo_add_custom_general_fields_save( $post_id ){
 	
-	// Text Field
-	$woocommerce_text_field = $_POST['_text_field'];
-	if( !empty( $woocommerce_text_field ) )
-		update_post_meta( $post_id, '_text_field', esc_attr( $woocommerce_text_field ) );	
+	
+	$quantity_title = $_POST['quantity_title'];
+	if( !empty( $quantity_title ) )
+		update_post_meta( $post_id, 'quantity_title', esc_attr( $quantity_title ) );
+
+	$quantity_min_text = $_POST['quantity_min_text'];
+	if( !empty( $quantity_min_text ) )
+		update_post_meta( $post_id, 'quantity_min_text', esc_attr( $quantity_min_text ) );	
+
+	$quantity_min_number = $_POST['quantity_min_number'];
+	if( !empty( $quantity_min_number ) )
+		update_post_meta( $post_id, 'quantity_min_number', esc_attr( $quantity_min_number ) );	
 }
 
+///Add the File Upload Field in Shipping Fields Group 
+/*add_filter( 'woocommerce_checkout_process', 'woo_filter_upload_shipping' );
+
+function woo_filter_upload_shipping( $address_fields ) { */
+//  $address_fields['file_upload']['required'] = true;
+
+/*$address_fields['file_upload'] = array(
+    'label'     => __('Upload your ID', 'woocommerce'),
+    'required'  => false,
+    'class'     => array('form-row-wide'),
+    'clear'     => true
+);
+
+return $address_fields;
+}
+
+add_action('woocommerce_after_order_notes','add_file_field');
+function add_file_field(){
+
+  $uploadFile   = "";
+
+  $uploadFile   .='<div id="upload_CNIC_image">';
+  $uploadFile .='<input id="file_upload" name="file_upload" type="file" multiple="true">';
+  $uploadFile .='<span id="uploadComplete">';
+  $uploadFile .='</span>';
+  $uploadFile .='</div>';
+  echo $uploadFile;
+
+
+}*/
+
+
+/**
+ * Process the checkout
+ */
+// add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
+
+// function my_custom_checkout_field_process() {
+//     // Check if set, if its not set add an error.
+//     if ( ! $_POST['file_upload'] )
+//         wc_add_notice( __( 'Phone 2 is compulsory. Please enter a value' ), 'error' );
+// }
+
+
+/**
+ * Update the order meta with field value
+ */
+
+
+/*add_action( 'woocommerce_checkout_update_order_meta', 'my_custom_checkout_field_update_order_meta' );
+
+function my_custom_checkout_field_update_order_meta( $order_id ) {
+    if ( ! empty( $_POST['file_upload'] ) ) {
+        update_post_meta( $order_id, 'file_upload', sanitize_text_field( $_POST['file_upload'] ) );
+    }
+} */
+
+
+/**
+ * Display field value on the order edit page
+ */
+
+/*add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
+
+function my_custom_checkout_field_display_admin_order_meta($order){
+    echo '<p><strong>'.__('Phone 2').':</strong> <br/>' . get_post_meta( $order->id, 'file_upload', true ) . '</p>';
+}*/
