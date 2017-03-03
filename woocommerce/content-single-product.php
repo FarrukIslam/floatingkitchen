@@ -83,3 +83,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php 
+	global $post;
+	$min_value =  get_post_meta( $post->ID, 'quantity_min_number', true);
+?>
+<style>
+	.variations_button:before {
+    content: "( Min. <?php echo $min_value; ?> )";
+}
+</style>
