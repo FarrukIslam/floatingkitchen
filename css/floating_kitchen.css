@@ -441,7 +441,7 @@ button:focus {
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
-    padding: 10px 45px 10px 10px;
+    padding: 10px 55px 10px 10px;
     height: 40px;
     position: relative;
 }
@@ -1457,4 +1457,18 @@ table.variation_quantity_table tbody tr:nth-child(even) {
 
 div#wufdc_div {
     margin: 30px 0;
+}
+.woocommerce .quantity .qty {
+    width: 3.631em;
+    text-align: center;
+    -moz-box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+    color: #333;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+    width: 100px;
+    outline: none;
 }
