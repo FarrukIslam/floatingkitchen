@@ -1243,7 +1243,24 @@ nav.woocommerce-pagination {
     font-size: 20px;
     line-height: 35px;
 }
-
+div#variation_pa_select-color-ink {
+    position: relative;
+}
+div#variation_pa_select-color-ink:before {
+    position: absolute;
+    height: 37px;
+    width: 40px;
+    left: 0px;
+    top: 0px;
+    content: "2";
+    background: #337ab7;
+    color: #fff;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 35px;
+}
 /*  quantity single product */
 
 .variations_button {
@@ -1253,7 +1270,7 @@ nav.woocommerce-pagination {
 
 .variations_button .quantity:before {
     position: absolute;
-    content: "2";
+    content: "3";
     width: 40px;
     background: #337ab7;
     height: 37px;
@@ -1418,4 +1435,8 @@ table.variation_quantity_table tbody tr:nth-child(even) {
     float: none;
     width: 100%;
 }
+}
+
+div#wufdc_div {
+    margin: 30px 0;
 }
