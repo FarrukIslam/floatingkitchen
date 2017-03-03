@@ -1315,7 +1315,6 @@ div#variation_pa_select-color-ink:before {
     outline: none;
 }
 
-
 .woocommerce div.product form.cart .button {
     background: #2aa4e5;
     background: -moz-linear-gradient(top,#2aa4e5 10%,#197abf 90%);
@@ -1358,6 +1357,7 @@ span.gema75_wc_wl_already_on_wishlist {
 }
 
 /* price filter css */
+
 table.variation_quantity_table {
     box-shadow: 0 0 5px #ddd;
     width: 100%;
@@ -1393,7 +1393,6 @@ table.variation_quantity_table tbody tr:nth-child(odd) {
 table.variation_quantity_table tbody tr:nth-child(even) {
     background: transparent;
 }
-
 
 /* view cart message */
 .woocommerce-message {
