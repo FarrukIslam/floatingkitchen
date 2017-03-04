@@ -309,7 +309,7 @@ button:focus {
     display: block;
     overflow: hidden;
     margin-right: 1px;
-    height: 29px;
+    height: 33px;
     outline: none;
 }
 .submit_search {
@@ -1151,7 +1151,7 @@ nav.woocommerce-pagination {
   outline: 0;
 }
 .related_product_singlepage .slick-arrow {
-    right: 4px !important;
+    right: 27px !important;
     left: inherit !important;
     top: -29px !important;
     width: 20px;
@@ -1173,7 +1173,7 @@ nav.woocommerce-pagination {
     line-height: 20px;
 }
 .related_product_singlepage .slick-prev {
-    right: 28px !important;
+    right: 50px !important;
 }
 
 /* tab layout */

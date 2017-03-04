@@ -43,9 +43,10 @@ $args = apply_filters( 'woocommerce_related_products_args', array(
 $products                    = new WP_Query( $args );
 $woocommerce_loop['name']    = 'related';
 $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_columns', $columns );
+?>
 
-if ( $products->have_posts() ) : ?>
-<div class="col-md-4">
+<?php if ( $products->have_posts() ) : ?>
+<div class="col-md-3">
 	<div class="related products related_product_singlepage">
 
 		<h4><?php _e( 'Related Products', 'woocommerce' ); ?></h4>
@@ -53,8 +54,7 @@ if ( $products->have_posts() ) : ?>
 		<div class="hero__title" id="animatedHeading">
 		<?php woocommerce_product_loop_start(); ?>
 
-
-
+		<div class="related_slick_slider">
 			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
 
@@ -85,7 +85,7 @@ if ( $products->have_posts() ) : ?>
 			</div>	<!-- Product -->
 
 			<?php endwhile; // end of the loop. ?>
-
+</div>
 		<?php woocommerce_product_loop_end(); ?>
 		</div>
 
@@ -94,6 +94,7 @@ if ( $products->have_posts() ) : ?>
 
 
 
-<?php endif;
+<?php endif; ?>
 
+<?php 
 wp_reset_postdata();

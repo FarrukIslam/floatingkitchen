@@ -94,7 +94,7 @@
 						<div class="col-md-4 col-sm-4 col-xs-12 padding_0">
 							<ul class="header_right list-inline pull-right">
 								<li class="singin_register">
-									<a href="#">Sing In</a> Or <a href="#">Register<br> your account</a>
+									<a href="#">Sign In</a> Or <a href="#">Register<br> your account</a>
 								</li>
 								<!-- <li class="header_wishlist">
 									<a href="#"><span class="ion_heart">0</span></a>
